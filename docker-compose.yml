@@ -1,0 +1,15 @@
+version: '3.1'
+
+networks:
+  backend:
+
+services:
+  jupyter:
+    image: jupyter:latest
+    networks:
+      - backend
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./data:/home/jovyan/work/data
+      - ./notebooks:/home/jovyan/work/notebooks
